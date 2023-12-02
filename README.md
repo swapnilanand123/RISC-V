@@ -17,4 +17,28 @@ Implementing a RISC-V processor as a single-cycle core is a good starting point 
 # Waveform
 ![image](https://github.com/swapnilanand123/RISCV_Single_Cycle_Core/assets/143795450/da8cb198-d6f8-44e2-a839-81c752d61091)
 
+# RISC-V Pipeline Core
+A RISC-V Pipeline Core refers to a processor core design that uses a pipeline architecture to execute instructions. Unlike a single-cycle core where each instruction completes in one clock cycle, a pipeline core breaks down the instruction execution into multiple stages, allowing multiple instructions to be in various stages of execution simultaneously. This enables better throughput and improved performance compared to a single-cycle core.
+
+A typical RISC-V pipeline core consists of several stages, with each stage dedicated to a specific operation. The classic pipeline stages include:
+
+1. **Instruction Fetch (IF):** Fetch the instruction from memory.
+2. **Instruction Decode (ID):** Decode the instruction, determining the type and the operands.
+3. **Execute (EX):** Perform the actual computation or operation specified by the instruction.
+4. **Memory Access (MEM):** Access memory if needed (for load/store operations).
+5. **Write Back (WB):** Write the result back to the register file.
+
+The pipeline architecture allows different instructions to be at different stages simultaneously, improving overall throughput. However, it introduces challenges such as hazards, including data hazards (dependencies between instructions), control hazards (branch instructions that affect the program flow), and structural hazards (resource conflicts).
+
+To mitigate these hazards, additional stages and mechanisms such as forwarding, speculation, and branch prediction may be incorporated into the pipeline design.
+
+Pipeline cores can be further categorized into different types based on the depth of the pipeline. Deeper pipelines allow for higher clock speeds but may introduce more pipeline stalls due to hazards.
+
+Designing a RISC-V pipeline core involves a balance between pipeline depth, clock speed, and hazard handling mechanisms to achieve optimal performance. It is a more complex design compared to a single-cycle core but is closer to what is used in modern processors for achieving better performance.
+
+# Architecture
+![image](https://github.com/swapnilanand123/RISCV_Single_Cycle_Core/assets/143795450/6132359d-6c15-4237-a9cb-a2a967da5f2c)
+
+# Waveform
+https://edaplayground.com/x/7WZ2
 
